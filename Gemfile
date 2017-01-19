@@ -31,3 +31,4 @@ gem 'haml-rails', '~> 0.9.0'
 gem 'bootstrap-generators', '~> 3.3', '>= 3.3.4'
 
 gem 'mailboxer', '~> 0.14.0'
+gem 'devise', '~> 4.2'

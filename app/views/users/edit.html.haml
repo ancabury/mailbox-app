@@ -1,9 +1,8 @@
 .page-header
   %h1 Editing user
-$br
+%br
 
 = render 'form'
 
-= link_to 'Show', @user
-\|
+= link_to 'Show', @user, class: 'btn btn-secondary'
 = link_to 'Back', users_path, class: 'btn btn-secondary'

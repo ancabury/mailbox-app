@@ -13,12 +13,15 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+
   %body
     .container
+      = render partial: 'layouts/header'
+
       - flash.each do |name, msg|
-        = content_tag :div, class: "alert alert-#{name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do
-          %button.close{type: "button", data: {dismiss: "alert"} }
-            %span{aria: {hidden: "true"} } &times;
-            %span.sr-only Close
-          = msg
+        - if msg.is_a?(String)
+          %div{:class => "alert alert-#{name.to_s == 'notice' ? 'success' : 'danger'} container"}
+            %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+            = content_tag :div, msg, :id => "flash_#{name}"
+
       = yield
