@@ -1,0 +1,23 @@
+%nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      %a.navbar-brand{:href => "#"} New
+
+    #bs-example-navbar-collapse-2.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          %a{:href => "#"} Link
+
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Actions
+            %span.caret
+          %ul.dropdown-menu{:role => "menu"}
+            %li
+              %a{:href => "#"} Delete
+            %li
+              %a{:href => "#"} Spam
+
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{:href => "#"} Other Action

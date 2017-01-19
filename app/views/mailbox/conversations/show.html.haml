@@ -1,0 +1,17 @@
+.page-header
+  %h1 Inbox
+
+.row
+  = render partial: 'mailbox/shared/folders'
+
+  .container-three.col-lg-10.col-md-10.col-sm-11.col-xs-12.email.no-lr-padding
+    .conversation-content
+      .options-bar
+        = render partial: 'mailbox/mailbox/options'
+
+      .jumbotron
+        .mailbox-conversations
+          = render partial: 'mailbox/conversations/message'
+
+    .conversation-actions
+      = render partial: 'mailbox/conversations/actions'

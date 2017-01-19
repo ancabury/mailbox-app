@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
   def authorization_error
     redirect_to root_path, flash: { error: 'Unauthorized action' }
   end
+
+  def mailbox
+    @mailbox ||= current_user.mailbox
+  end
 end
