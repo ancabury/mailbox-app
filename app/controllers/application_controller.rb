@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password, :password_confirmation])
     devise_parameter_sanitizer.permit(:sign_in, keys: [:username, :password])
   end
+
+  def authorization_error
+    redirect_to root_path, flash: { error: 'Unauthorized action' }
+  end
 end
